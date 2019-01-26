@@ -1,2 +1,16 @@
+<!-- how to embeded the widget <script type="text/javascript" src="https://widget-demo.herokuapp.com/products/4.js"></script> -->
+<!-- https://www.storemapper.co/users/3073/stores/7951960/edit/  edit of store, so user=3073, store=7951960-->
 <h1>Test Page</h1>
 <%= product.name %>
+<%= product.user.email if product.user %>
+<%= product.user.id %>
+
+
+
+
+<!--
+
+<div id='storemapper' style='width:100%;'>
+	<p>Store Locator is loading from <a href='https://www.storemapper.co'>Storemapper plugin</a>...</p>
+</div>
+<script data-storemapper-start='2016,06,01' data-storemapper-id='3073'>(function() {var script = document.createElement('script');script.type  = 'text/javascript';script.async = true;script.src = document.location.protocol + '//www.storemapper.co/js/widget.js'; var entry = document.getElementsByTagName('script')[0];entry.parentNode.insertBefore(script, entry);}());</script> -->
