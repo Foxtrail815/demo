@@ -12,8 +12,15 @@
       <li class="nav-item">
         <%= link_to "Articles", articles_path, class: "nav-link" %>
       </li>
-      <% if current_user.try(:admin?) %>
-        <li class="nav-item">
+      <li class="nav-item">
+        <%= link_to "Counters", counters_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "New counter", new_counter_path, class: "nav-link" %>
+      </li>
+
+      <% if current_user.try(:admin?)  %>
+          <li class="nav-item">
           <%= link_to "Admin Account", edit_user_registration_path, class: "nav-link" %>
           
       </li>

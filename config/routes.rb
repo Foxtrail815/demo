@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :counters
   resources :products
   root "pages#home"
   devise_for :users

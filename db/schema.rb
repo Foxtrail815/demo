@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190125162919) do
+ActiveRecord::Schema.define(version: 20190201173709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(version: 20190125162919) do
     t.text "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "counters", force: :cascade do |t|
+    t.date "start_date"
+    t.time "start_time"
+    t.date "end_date"
+    t.time "end_time"
+    t.string "expired_text"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_counters_on_user_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -51,6 +63,7 @@ ActiveRecord::Schema.define(version: 20190125162919) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "counters", "users"
   add_foreign_key "products", "users"
   add_foreign_key "stores", "users"
 end

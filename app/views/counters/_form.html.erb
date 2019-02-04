@@ -1,0 +1,42 @@
+<%= form_with(model: counter, local: true) do |form| %>
+  <% if counter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(counter.errors.count, "error") %> prohibited this counter from being saved:</h2>
+
+      <ul>
+      <% counter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date, id: :counter_start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.time_select :start_time, id: :counter_start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date, id: :counter_end_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_time %>
+    <%= form.time_select :end_time, id: :counter_end_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expired_text %>
+    <%= form.text_field :expired_text, id: :counter_expired_text %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

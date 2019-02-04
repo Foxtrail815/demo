@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @counter.start_date %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @counter.start_time %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @counter.end_date %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @counter.end_time %>
+</p>
+
+<p>
+  <strong>Expired text:</strong>
+  <%=  @counter.expired_text %>
+</p>
+
+<%= link_to 'Edit', edit_counter_path(@counter) %> |
+<%= link_to 'Back', counters_path %>

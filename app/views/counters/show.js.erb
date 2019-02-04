@@ -1,5 +1,3 @@
 // how to embeded the widget <script type="text/javascript" src="https://widget-demo.herokuapp.com/products/4.js"></script>
 
-document.write("<%= j(render(:partial => 'embed', :locals => {:product => @product}).html_safe) %>");
-
-
+document.write("<%= j(render(:partial => 'counterwidget', :locals => {:counter => @counter}).html_safe) %>");
